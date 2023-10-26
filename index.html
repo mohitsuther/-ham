@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        
+            text-decoration: none;
+            font-family: sans-serif;
+        }
+        
+        .navbar {
+            width: 100%;
+            height: 80px;
+            background-color: #101010;
+            display: flex;
+            align-items: center;
+            padding-inline: 20px;
+        }
+        
+        h1 {
+            color: white;
+            margin-right: auto;
+        }
+        
+        a {
+            padding-inline: 15px;
+            color: white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 10px;
+            border: 2px solid rgb(15, 36, 160);
+            margin-inline: 5px;
+        }
+        
+        a:nth-child(1) {
+            background-color: white;
+            color: #000;
+        }
+        
+        a:hover {
+            background-color: aliceblue;
+            color: #000;
+            scale: 2vh;
+            transition: all .7s ease;
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        @media screen and (max-width:800px) {
+            .navlink {
+                margin-top: 462px;
+                width: 39%;
+                height: 380px;
+                background-color: #101010;
+                text-align: center;
+                position: absolute;
+                left: -80%;
+                width: 200px;
+                display: none;
+            }
+            .hamburger{
+                padding-inline: 20px;
+                
+                transition: all .5s ease-in-out;
+            }
+            .bar {
+                padding-inline: 0px;
+                text-align: right;
+                color: white;
+                background-color: aliceblue;
+                width: 30px;
+                height: 3.0px;
+                margin: 5px;
+                display: flex;
+                flex-direction: column;
+                display: none;
+            }
+        
+            .hamburger.active .bar:nth-child(1){
+                transform: translateY(8px) rotate(45deg);
+                transition: all .3s ease-in-out ;
+            }
+            
+            .hamburger.active.bar:nth-child(2){
+               opacity: 0;  
+               transition: all .3s ease-in-out ;
+            }   
+        
+            
+            
+           .hamburger.active.bar:nth-child(3){
+                transform: translateY(-8px) rotate(-45deg);
+                transition: all .3s ease-in-out ;
+            }
+        
+            .hamburger.active{
+                display: initial;
+                rotate: 90deg;
+            }
+        
+            a{
+                display: flex;
+                flex-direction: column;
+                width: 155px;
+                padding: 18px;
+                text-align: center;
+                margin-block: 10px;
+                margin-left: 20px;
+                margin-right: 20px;
+        
+            }
+        
+            .bar {
+                display: block;
+            }
+        
+        
+        
+            .navlink.active {
+                left: 0;
+                display: block;
+                position: fixed;
+               
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <h1>LOGO</h1>
+        <div class="navlink " id="nav">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Service</a>
+            <a href="">Development</a>
+            <a href="">Contact</a>
+        </div>
+        
+        <div class="hamburger " id="hamburge">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+    </div>
+    </div>
+    <script>
+        const navright = document.getElementById('nav');
+        const navToggle = document.getElementById('hamburge');
+        navToggle.addEventListener('click', () => {
+            navright.classList.toggle('active');
+        
+      
+        navToggle.classList.toggle('active');})
+    </script>
+</body>
+
+</html>
